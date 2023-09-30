@@ -1,0 +1,26 @@
+ALGORITHM palindrome
+VAR
+    t : ARRAY_OF CHAR [n];
+    n , i , j :intiger ;
+    ch : CHAR;
+
+BEGIN
+    FOR i FROM 0 TO n STEP 1  DO      /*remplissage d'un tableau de  taille n*/
+        read (ch);
+        n := n+1 ;                    /*le tableau inisialise a 0 case on va ajoute un case*/
+        t[i]:= ch ;            /* remplire la case*/
+    END_FOR
+    i:=0;               /*compteur au debut de tableau*/
+    j:=n-1;             /*compteur a la fin de tableau*/
+             
+        IF (t[i]=t[j]) THEN
+            WHILE (i>j) DO     /*boucle while pour teste le compteur et modifier le */
+                 i:=i+1;
+                 j:=j-1;
+            END_WHILE     
+        ELSE
+            write ("word is not palindrome"); /*a condtion les deux case est deffirent*/
+        END_IF
+    
+    write ("word is a palindrome"); /* a condition boucle est termine*/
+END
