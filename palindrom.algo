@@ -1,26 +1,23 @@
-ALGORITHM palindrome
-VAR
-    t : ARRAY_OF CHAR [n];
-    n , i , j :intiger ;
-    ch : CHAR;
-
+ALGORITHM palind
+var
+   ch : STRING;
+    i , j : INTEGER;
 BEGIN
-    FOR i FROM 0 TO n STEP 1  DO      /*remplissage d'un tableau de  taille n*/
-        read (ch);
-        n := n+1 ;                    /*le tableau inisialise a 0 case on va ajoute un case*/
-        t[i]:= ch ;            /* remplire la case*/
-    END_FOR
-    i:=0;               /*compteur au debut de tableau*/
-    j:=n-1;             /*compteur a la fin de tableau*/
-             
-        IF (t[i]=t[j]) THEN
-            WHILE (i>j) DO     /*boucle while pour teste le compteur et modifier le */
-                 i:=i+1;
-                 j:=j-1;
-            END_WHILE     
-        ELSE
-            write ("word is not palindrome"); /*a condtion les deux case est deffirent*/
-        END_IF
-    
-    write ("word is a palindrome"); /* a condition boucle est termine*/
+    read(ch);            /*remplissage*/
+    j:= length(ch)-1;    /*inistalisation de compteur */
+    i:=0;
+     
+     IF (length(ch)>1) THEN     /*condtion d'arret si chaine vide ou d'un seul caracter*/
+        WHILE (i=<length(ch)/2) DO  /*condtion d'arret i au milieu de chaine*/
+            IF (ch[i]=ch[j]) THEN /* comparison et changment de compteur*/
+                i:=i+1;
+                j:= j-1-i;
+            ELSE                 /*en cas le deus chaine non pas égaux*/
+                write("chaine simple")
+            END_IF
+        END_WHILE
+        write(chaine  palandrom);  /*a condition la chaine palindom*/
+     ELSE
+        write("chaine incorrect") /*resultaut a condtion chaine incorrect vide ou d'un seul char*/
+     END_IF
 END
