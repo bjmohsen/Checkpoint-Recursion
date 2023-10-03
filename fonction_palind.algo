@@ -1,0 +1,32 @@
+ALGORITHM fonc_p
+VAR
+    ch : STRING;
+    i : INTEGER := 0;
+    j := intiger := length.ch -1 ;
+    R : BOOLEAN ;
+    R := true ;
+
+    FUNCTION palindrom (i ,j : intiger ,ch : STRING , R :BOOLEAN) : BOOLEAN
+     /*fonction pour teste le deaux caracter avec de retour booolean*/
+    BEGIN
+      IF (ch[i]<>ch[j]) THEN /*condtion d'arret de fonction*/
+        R :=false ;
+      ELSE
+      i := i+1;
+      j := j -1 -i ;
+      R := true ;
+      WHILE (i<length.ch / 2) DO /*condtion d'arret*/
+      palindrom (i,j,ch,R); /*appel fonction si le primer test return vraix*/
+      END_WHILE
+      END_IF
+    END
+BEGIN
+    IF (length.ch > 1) THEN /*condtion faux grneral si la chaine vide ou d'un seul caracter*/
+        R := palindrom(i,j,ch,R);   
+    END_IF    
+    IF(R:= true) THEN
+        write("chaine palindom"); /* ls deaux resultat final d'algo */
+    ELSE
+        write("chaine simple");
+    END_IF
+END
